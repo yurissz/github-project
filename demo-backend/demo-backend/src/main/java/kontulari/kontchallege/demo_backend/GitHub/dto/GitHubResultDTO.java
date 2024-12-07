@@ -7,6 +7,56 @@ public class GitHubResultDTO {
     private String location;
     private String bio;
 
+    private String name;
+
+    private String avatar_url;
+
+    private Number public_repos;
+
+    private Number following;
+
+    private Number followers;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAvatar_url() {
+        return avatar_url;
+    }
+
+    public void setAvatar_url(String avatar_url) {
+        this.avatar_url = avatar_url;
+    }
+
+    public Number getPublic_repos() {
+        return public_repos;
+    }
+
+    public void setPublic_repos(Number public_repos) {
+        this.public_repos = public_repos;
+    }
+
+    public Number getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(Number following) {
+        this.following = following;
+    }
+
+    public Number getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(Number followers) {
+        this.followers = followers;
+    }
+
     public String getLogin() {
         return login;
     }

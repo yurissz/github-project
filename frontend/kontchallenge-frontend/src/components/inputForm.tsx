@@ -23,7 +23,7 @@ const FormSchema = z.object({
     }),
 })
 
-export function InputForm({ setUsername }: InputFormProps) {
+export function InputForm({ setUsername, setRepos }: InputFormProps) {
     const { toast } = useToast()
 
     const form = useForm<z.infer<typeof FormSchema>>({
@@ -44,8 +44,12 @@ export function InputForm({ setUsername }: InputFormProps) {
         })
 
         try {
-            const { data: response } = await api.get(`/${data.username}`)
-            setUsername(response)
+            const { data: responseUser } = await api.get(`/${data.username}`)
+            setUsername(responseUser)
+
+            const { data: responserRepos } = await api.get(`/${data.username}/repos`)
+            setRepos(responserRepos)
+
 
         } catch (error) {
             console.log(error);
@@ -64,16 +68,17 @@ export function InputForm({ setUsername }: InputFormProps) {
                         name="username"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="text-lg font-semibold">GitHub Username</FormLabel>
+                                <FormLabel className="text-lg font-sourcesans3 text-[#525F7F]">KontChallenge</FormLabel>
                                 <FormControl>
                                     <Input
+
                                         placeholder="Digite um username do GitHub..."
-                                        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        className=" text-[#525F7F] font-sourcesans3 w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                         {...field}
                                     />
                                 </FormControl>
-                                <FormDescription className="text-sm text-gray-500">
-                                    This is your public display name.
+                                <FormDescription className="text-sm text-gray-500 font-sourcesans3">
+                                    Você acessará as principais informações do perfil e seus repositórios
                                 </FormDescription>
                                 <FormMessage className="text-red-500 text-sm" />
                             </FormItem>
@@ -81,7 +86,7 @@ export function InputForm({ setUsername }: InputFormProps) {
                     />
                     <Button
                         type="submit"
-                        className="w-full py-3 bg-[#1DE9B6] text-[#525F7F] rounded-md hover:bg-[#1DE9B6]/80 focus:outline-none focus:ring-2 focus:ring-[#1DE9B6]"
+                        className=" font-sourcesans3 w-full py-3 bg-[#1DE9B6] text-[#525F7F] rounded-md hover:bg-[#1DE9B6]/80 focus:outline-none focus:ring-2 focus:ring-[#1DE9B6]"
                     >
                         Enviar
                     </Button>

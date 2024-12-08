@@ -6,8 +6,7 @@ public class LicenseDTO {
     private String key;
     private String name;
 
-    @JsonProperty("spdx_id")
-    private String spdxId;
+    private String spdx_id;
 
     private String url;
 
@@ -27,12 +26,12 @@ public class LicenseDTO {
         this.name = name;
     }
 
-    public String getSpdxId() {
-        return spdxId;
+    public String getSpdx_id() {
+        return spdx_id;
     }
 
-    public void setSpdxId(String spdxId) {
-        this.spdxId = spdxId;
+    public void setSpdx_id(String spdx_id) {
+        this.spdx_id = spdx_id;
     }
 
     public String getUrl() {

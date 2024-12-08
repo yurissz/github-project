@@ -5,33 +5,32 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class OwnerDTO {
     private String login;
 
-    @JsonProperty("avatar_url")
-    private String avatarUrl;
+    private String avatar_url;
 
-    @JsonProperty("html_url")
-    private String htmlUrl;
+    private String html_url;
 
     public String getLogin() {
         return login;
+    }
+
+    public String getAvatar_url() {
+        return avatar_url;
+    }
+
+    public void setAvatar_url(String avatar_url) {
+        this.avatar_url = avatar_url;
+    }
+
+    public String getHtml_url() {
+        return html_url;
+    }
+
+    public void setHtml_url(String html_url) {
+        this.html_url = html_url;
     }
 
     public void setLogin(String login) {
         this.login = login;
     }
 
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
-    }
-
-    public String getHtmlUrl() {
-        return htmlUrl;
-    }
-
-    public void setHtmlUrl(String htmlUrl) {
-        this.htmlUrl = htmlUrl;
-    }
 }

@@ -6,6 +6,27 @@ public class RepositoryDTO {
     private String name;
     private String description;
 
+    private String language;
+
+    @JsonProperty("private")
+    private boolean isPrivate;
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public boolean isPrivate() {
+        return isPrivate;
+    }
+
+    public void setPrivate(boolean aPrivate) {
+        isPrivate = aPrivate;
+    }
+
     @JsonProperty("html_url")
     private String htmlUrl;
 

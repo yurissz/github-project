@@ -16,12 +16,17 @@ export default function App() {
                 <div className="flex flex-col items-center text-center py-8">
                     <img src={logoKontulari} className="py-4" alt="Logo Kontulari" />
                     <UserCard username={username} />
-                    {/* Grid Responsiva */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 w-full px-4">
-                        {repos?.map((repo) => (
-                            <RepositoryCard key={repo.html_url} repository={repo} />
-                        ))}
-                    </div>
+                    {repos && repos.length > 0 ? (
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 w-full px-4">
+                            {repos.map((repo) => (
+                                <RepositoryCard key={repo.html_url} repository={repo} />
+                            ))}
+                        </div>
+                    ) : (
+                        <p className="text-muted-foreground mt-4 ">
+                            Este usuário não possui repositórios públicos.
+                        </p>
+                    )}
                 </div>
             )}
             {username === undefined && (

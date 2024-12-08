@@ -19,7 +19,7 @@ import api from "@/services/api"
 
 const FormSchema = z.object({
     username: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
+        message: "O username precisa ter pelo menos 2 letras",
     }),
 })
 
@@ -52,7 +52,7 @@ export function InputForm({ setUsername, setRepos }: InputFormProps) {
 
 
         } catch (error) {
-            console.log(error);
+
         }
     }
 

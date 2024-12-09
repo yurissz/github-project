@@ -1,0 +1,13 @@
+services:
+  spring-app:
+    image: backend-kontulari:latest
+    ports:
+      - "8080:8080"
+  spa-app:
+    build:
+      context: ./frontend/kontchallenge-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "9090:9090"
+    depends_on:
+      - spring-app

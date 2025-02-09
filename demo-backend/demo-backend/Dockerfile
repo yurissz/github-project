@@ -7,6 +7,6 @@ RUN chmod +x mvnw
 RUN ./mvnw dependency:go-offline
 
 COPY src ./src
-RUN ./mvnw clean install -DskipTests
+RUN ./mvnw clean package -DskipTests
 
-CMD ["java", "-jar", "target/seu-app.jar"]
+CMD ["sh", "-c", "java -jar target/*.jar"]

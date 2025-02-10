@@ -44,10 +44,10 @@ export function InputForm({ setUsername, setRepos }: InputFormProps) {
         })
 
         try {
-            const { data: responseUser } = await api.get(`/${data.username}`)
+            const { data: responseUser } = await api.get(`/github/${data.username}`)
             setUsername(responseUser)
 
-            const { data: responserRepos } = await api.get(`/${data.username}/repos`)
+            const { data: responserRepos } = await api.get(`/github/${data.username}/repos`)
             setRepos(responserRepos)
 
 

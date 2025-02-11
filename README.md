@@ -1,4 +1,4 @@
-# KontChallenge
+# Github Project
 
 ## Descrição
 Este é um projeto fullstack desenvolvido para facilitar o acesso às principais informações de um usuário do GitHub e aos detalhes de seus repositórios. A aplicação oferece uma interface amigável e intuitiva para pesquisar usuários, visualizar estatísticas de perfil, como número de seguidores, linguagens mais usadas, além de listar e detalhar os repositórios públicos disponíveis no perfil.
